@@ -9,9 +9,15 @@ const Header = () => (
     <div className="main-menu">
       <input type="text" placeholder="Pesquisar" />
       <ul>
-        <li>Início</li>
-        <li>Filmes</li>
-        <li>Séries</li>
+        <li>
+          <a href="#">Início</a>
+        </li>
+        <li>
+          <a href="#">Filmes</a>
+        </li>
+        <li>
+          <a href="#">Séries</a>
+        </li>
       </ul>
     </div>
   </header>

@@ -2,10 +2,24 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.main-header img {
+  max-width: 300px;
 }
 
 .main-menu {
   display: flex;
+}
+
+.main-menu input {
+  padding: 10px 10px;
+  color: #2c3e50;
+  font-size: 16px;
+  border: none;
+  border-radius: 2px;
 }
 
 .main-menu ul {
@@ -15,5 +29,16 @@
 }
 
 .main-menu ul li {
-  margin-left: 10px;
+  margin-left: 20px;
+  font-size: 24px;
+}
+
+.main-menu li a {
+  text-decoration: none;
+  color: #ecf0f1;
+  transition: all ease 0.2s;
+}
+
+.main-menu li a:hover {
+  color: #bdc3c7;
 }
