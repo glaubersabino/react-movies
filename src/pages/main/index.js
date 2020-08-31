@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { FiPlus, FiPlay } from "react-icons/fi";
 import api from "../../services/api";
 
 import "./styles.css";
@@ -41,8 +42,12 @@ export default class Main extends Component {
               <span>13+</span>
             </div>
             <div className="actions">
-              <button className="btn btn-danger">Assistir</button>
-              <button className="btn btn-opacity">Favoritos</button>
+              <button className="btn btn-danger">
+                <FiPlay /> Assistir
+              </button>
+              <button className="btn btn-opacity">
+                <FiPlus /> Favoritos
+              </button>
             </div>
           </div>
         </div>

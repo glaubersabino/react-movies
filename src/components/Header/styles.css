@@ -74,7 +74,17 @@
   font-size: 0.7em;
 }
 
+.poster-featured-info .actions {
+  display: flex;
+}
+
 .poster-featured-info .actions button {
+  display: flex;
   margin-right: 20px;
   font-family: "Gilroy ExtraBold";
+}
+
+.poster-featured-info .actions button svg {
+  width: 20px;
+  height: 20px;
 }
