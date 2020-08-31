@@ -35,11 +35,11 @@ export default class Main extends Component {
         <div className="poster-bg">
           <Header />
           <div className="poster-featured-info">
-            <h1>Harry Potter e a Pedra Filosofal</h1>
+            <h1>Project Power</h1>
             <div className="info">
               <p>98%</p>
               <p>30/08/2020</p>
-              <span>13+</span>
+              <span>16+</span>
             </div>
             <div className="actions">
               <button className="btn btn-danger">
