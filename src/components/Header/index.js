@@ -1,13 +1,21 @@
 import React from "react";
+import { FiSearch } from "react-icons/fi";
 
 import logo from "../../assets/logo.png";
 import "./styles.css";
+import { IconContext } from "react-icons/lib";
 
 const Header = () => (
   <header className="main-header">
     <img src={logo} alt="React Movies" />
     <div className="main-menu">
-      <input type="text" placeholder="Pesquisar" />
+      <form action="">
+        <IconContext.Provider value={{ color: "#c0392b", size: "24px" }}>
+          <FiSearch />
+        </IconContext.Provider>
+        <input type="text" placeholder="Pesquisar" />
+      </form>
+
       <ul>
         <li>
           <a href="#">Início</a>

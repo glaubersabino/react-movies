@@ -12,14 +12,48 @@
 
 .main-menu {
   display: flex;
+  align-items: center;
+}
+
+.main-menu form {
+  position: relative;
+  transition: all 1s;
+  width: 50px;
+  height: 45px;
+  border-radius: 2px;
+}
+
+.main-menu form svg {
+  box-sizing: border-box;
+  padding: 8px;
+  width: 42.5px;
+  height: 42.5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #07051a;
+  font-size: 1.2em;
+  transition: all 1s;
+}
+
+form:hover {
+  width: 200px;
+  cursor: pointer;
+}
+
+form:hover input {
+  display: block;
 }
 
 .main-menu input {
-  padding: 10px 10px;
-  color: #2c3e50;
-  font-size: 16px;
-  border: none;
+  position: absolute;
+  width: 100%;
+  height: 45px;
+  border: 0;
   border-radius: 2px;
+  display: none;
+  font-size: 1em;
+  padding: 0 20px;
 }
 
 .main-menu ul {
@@ -32,16 +66,17 @@
 .main-menu ul li {
   margin-left: 20px;
   font-size: 24px;
+  font-weight: 600;
 }
 
 .main-menu li a {
   text-decoration: none;
   color: #ecf0f1;
-  transition: all ease 0.5s;
+  transition: all ease 0.2s;
 }
 
 .main-menu li a:hover {
-  color: #fff;
+  color: #c0392b;
 }
 
 .poster-featured-info {
