@@ -15,23 +15,20 @@
   box-sizing: border-box;
 }
 
-/* width */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: transparent;
   transition: all ease 0.6s;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #c0392b;
 }
