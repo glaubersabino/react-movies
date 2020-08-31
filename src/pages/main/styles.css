@@ -2,6 +2,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 20px 45px;
+  margin-top: 620px;
+  margin-bottom: 50px;
 }
 
 .posters .poster {
@@ -11,4 +13,22 @@
 .posters .poster,
 .posters .poster img {
   border-radius: 4px;
+}
+
+.poster-bg {
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* background-position: cover; */
+  background: linear-gradient(
+      0deg,
+      rgba(45, 52, 54, 1) 0%,
+      rgba(45, 52, 54, 0.8911939775910365) 10%,
+      rgba(45, 52, 54, 0) 25%,
+      rgba(45, 52, 54, 0) 74%,
+      rgba(45, 52, 54, 0.8547794117647058) 100%
+    ),
+    url("https://image.tmdb.org/t/p/original/zlt41e4kD8zlFbYBchlkrIvcY5Y.jpg");
 }

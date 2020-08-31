@@ -2,8 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
-  margin-bottom: 40px;
+  width: 90%;
+  margin: 20px auto 40px;
 }
 
 .main-header img {
@@ -26,6 +26,7 @@
   display: flex;
   list-style: none;
   margin-left: 10px;
+  padding: 5px;
 }
 
 .main-menu ul li {
@@ -36,9 +37,44 @@
 .main-menu li a {
   text-decoration: none;
   color: #ecf0f1;
-  transition: all ease 0.2s;
+  transition: all ease 0.5s;
 }
 
 .main-menu li a:hover {
-  color: #bdc3c7;
+  color: #fff;
+}
+
+.poster-featured-info {
+  margin-left: 5%;
+  margin-top: 20vh;
+}
+
+.poster-featured-info h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.poster-featured-info .info {
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.poster-featured-info p {
+  margin-right: 20px;
+  font-size: 0.8em;
+}
+
+.poster-featured-info span {
+  border: 1px solid #fff;
+  border-radius: 2px;
+  padding: 2px 5px;
+  font-size: 0.7em;
+}
+
+.poster-featured-info .actions button {
+  margin-right: 20px;
+  font-family: "Gilroy ExtraBold";
 }
