@@ -17,14 +17,14 @@ export default class Main extends Component {
 
   loadMovies = async () => {
     const response = await api.get(
-      "/movie/popular?api_key=e8ebd3655dbc3593ecab47c3565d5d9d&language=pt-BR&page=1"
+      `/movie/popular?api_key=${process.env.REACT_APP_SECRET_API}&language=pt-BR&page=1`
     );
     console.log(response.data);
   };
 
   loadTVShows = async () => {
     const response = await api.get(
-      "/tv/popular?api_key=e8ebd3655dbc3593ecab47c3565d5d9d&language=pt-BR&page=1"
+      `/tv/popular?api_key=${process.env.REACT_APP_SECRET_API}&language=pt-BR&page=1`
     );
     console.log(response.data);
   };
