@@ -76,3 +76,29 @@ button {
   background: rgba(128, 142, 155, 0.8);
   color: #fff;
 }
+
+.main-posters {
+  display: flex;
+  flex-direction: column;
+  margin-top: 620px;
+  margin-bottom: 50px;
+}
+
+.main-posters + .main-posters {
+  margin-top: 0px;
+}
+
+.main-posters h2 {
+  margin-bottom: 20px;
+}
+
+.posters {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 20px 45px;
+}
+
+.posters .poster,
+.posters .poster img {
+  border-radius: 4px;
+}

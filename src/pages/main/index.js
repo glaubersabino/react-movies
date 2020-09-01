@@ -1,36 +1,13 @@
 import React, { Component } from "react";
 import { FiPlus, FiPlay } from "react-icons/fi";
-import api from "../../services/api";
 
 import "./styles.css";
+
 import Header from "../../components/Header";
 import MoviesPopular from "../../components/MoviesPopular";
+import ShowsPopular from "../../components/ShowsPopular";
 
 export default class Main extends Component {
-  state = {
-    movies: [],
-    shows: [],
-  };
-
-  componentDidMount() {
-    this.loadMovies();
-    this.loadTVShows();
-  }
-
-  loadMovies = async () => {
-    const response = await api.get(
-      `/movie/popular?api_key=${process.env.REACT_APP_SECRET_API}&language=pt-BR&page=1`
-    );
-    console.log(response.data);
-  };
-
-  loadTVShows = async () => {
-    const response = await api.get(
-      `/tv/popular?api_key=${process.env.REACT_APP_SECRET_API}&language=pt-BR&page=1`
-    );
-    console.log(response.data);
-  };
-
   render() {
     return (
       <div className="main">
@@ -54,6 +31,7 @@ export default class Main extends Component {
           </div>
         </div>
         <MoviesPopular />
+        <ShowsPopular />
       </div>
     );
   }

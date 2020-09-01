@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { motion } from "framer-motion";
 import api from "../../services/api";
 
-import "./styles.css";
-
 const container = {
   hidden: { opacity: 1, scale: 0 },
   visible: {
