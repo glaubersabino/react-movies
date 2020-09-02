@@ -31,7 +31,7 @@ export default class Main extends Component {
           </div>
         </div>
         <MoviesPopular />
-        <ShowsPopular />
+        {/* <ShowsPopular /> */}
       </div>
     );
   }

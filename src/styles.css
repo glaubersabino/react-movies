@@ -102,3 +102,12 @@ button {
 .posters .poster img {
   border-radius: 4px;
 }
+
+.posters .poster {
+  transition: all ease 0.3;
+  cursor: pointer;
+}
+
+.posters .poster:hover {
+  transform: scale(1.1);
+}
