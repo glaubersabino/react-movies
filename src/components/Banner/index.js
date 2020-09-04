@@ -10,16 +10,19 @@ export default class Banner extends Component {
   state = {
     banners: [],
     bannersGenres: [],
-    genres: [],
+    genresAll: [],
   };
 
   componentDidMount() {
-    this.loadBanners();
     this.loadGenres();
 
-    this.updateInterval = setInterval(() => {
+    if (!this.props.data) {
       this.loadBanners();
-    }, 5000);
+
+      this.updateInterval = setInterval(() => {
+        this.loadBanners();
+      }, 5000);
+    }
   }
 
   loadBanners = async () => {
@@ -62,52 +65,77 @@ export default class Banner extends Component {
         UniqueGenres.push(Genres[index]);
       }
     }
-    this.setState({ genres: UniqueGenres });
+    this.setState({ genresAll: UniqueGenres });
   };
 
-  fuck = () => {
-    const { genres } = this.state;
-    const { bannersGenres } = this.state;
+  showGenres = () => {
+    const { genresAll } = this.state;
     const genresString = [];
 
-    for (let index = 0; index < bannersGenres.length; index++) {
-      for (let x = 0; x < genres.length; x++) {
-        if (bannersGenres[index] === genres[x].id) {
-          genresString.push(genres[x].name);
+    // Verifica se foram informadas propriedades ao componente, se sim, gera o banner single do filme ou série.
+    if (this.props.data) {
+      const g = this.props.gen;
+      for (let x = 0; x < g.length; x++) {
+        console.log(g[x].name);
+        genresString.push(g[x].name);
+      }
+    } else {
+      const { bannersGenres } = this.state;
+      for (let index = 0; index < bannersGenres.length; index++) {
+        for (let x = 0; x < genresAll.length; x++) {
+          if (bannersGenres[index] === genresAll[x].id) {
+            genresString.push(genresAll[x].name);
+          }
         }
       }
     }
+
     return genresString.join(", ");
   };
 
+  showDate = (date) => {
+    const newDate = new Date(date);
+    return newDate.toLocaleDateString("pt-BR");
+  };
+
   render() {
+    const singleBanner = this.props.data;
     const { banners } = this.state;
-    var bannersDate = new Date(
-      banners.release_date ? banners.release_date : banners.first_air_date
-    );
+    const date = singleBanner
+      ? singleBanner.release_date
+      : banners.release_date;
 
     const bannerStyle = {
-      background: `linear-gradient(0deg, rgba(45, 52, 54, 1) 0%, rgba(45, 52, 54, 0.8911939775910365) 10%, rgba(45, 52, 54, 0) 25%, rgba(45, 52, 54, 0) 74%, rgba(45, 52, 54, 0.8547794117647058) 100%), url("https://image.tmdb.org/t/p/original${banners.backdrop_path}")`,
+      background: `linear-gradient(0deg, rgba(45, 52, 54, 1) 0%, rgba(45, 52, 54, 0.8911939775910365) 10%, rgba(45, 52, 54, 0) 25%, rgba(45, 52, 54, 0) 74%, rgba(45, 52, 54, 0.8547794117647058) 100%), url("https://image.tmdb.org/t/p/original${
+        singleBanner ? singleBanner.backdrop_path : banners.backdrop_path
+      }")`,
     };
+
+    if (this.props.data) {
+      console.log(this.props.data.title);
+    }
 
     return (
       <div className="poster-bg" style={bannerStyle}>
         <Header />
         <div className="poster-featured-info">
-          <h1>{banners.title ? banners.title : banners.name}</h1>
-          <p>{banners.overview}</p>
+          <h1>{singleBanner ? singleBanner.title : banners.title}</h1>
+          <p>{singleBanner ? singleBanner.overview : banners.overview}</p>
           <div className="info">
             <div className="date">
               <p>
                 <FiThumbsUp />
-                {banners.vote_average * 10}%
+                {(singleBanner
+                  ? singleBanner.vote_average
+                  : banners.singleBanner) * 10}
+                %
               </p>
               <p>
-                <FiCalendar /> {bannersDate.toLocaleDateString("pt-BR")}
+                <FiCalendar /> {this.showDate(date)}
               </p>
             </div>
             <div className="categories">
-              <p>{this.fuck()}</p>
+              <p>{this.showGenres()}</p>
             </div>
           </div>
           <div className="actions">
