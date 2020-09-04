@@ -95,8 +95,21 @@ form:hover input {
 .poster-featured-info .info {
   max-width: 500px;
   display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+}
+
+.poster-featured-info .info .date,
+.poster-featured-info .info .date p {
+  display: flex;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+}
+
+.poster-featured-info .info .date p svg {
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
 }
 
 .poster-featured-info p {
@@ -127,4 +140,5 @@ form:hover input {
 .poster-featured-info .actions button svg {
   width: 20px;
   height: 20px;
+  margin-right: 5px;
 }

@@ -29,7 +29,7 @@ export default class ShowsPopular extends Component {
             <div key={show.id} className="poster">
               <img
                 src={`https://image.tmdb.org/t/p/w200${show.poster_path}`}
-                alt={show.title}
+                alt={show.name}
               />
             </div>
           ))}
