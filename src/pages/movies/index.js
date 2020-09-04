@@ -1,7 +1,15 @@
 import React, { Component } from "react";
 
+import Banner from "../../components/Banner";
+import MoviesPopular from "../../components/MoviesPopular";
+
 export default class Movies extends Component {
   render() {
-    return <h1>Movies</h1>;
+    return (
+      <div className="main">
+        <Banner />
+        <MoviesPopular total="18" />
+      </div>
+    );
   }
 }

@@ -9,8 +9,8 @@ export default class Main extends Component {
     return (
       <div className="main">
         <Banner />
-        <MoviesPopular />
-        <ShowsPopular />
+        <MoviesPopular total="12" />
+        <ShowsPopular total="12" />
       </div>
     );
   }

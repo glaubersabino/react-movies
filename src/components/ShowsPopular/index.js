@@ -25,7 +25,7 @@ export default class ShowsPopular extends Component {
         <h2>Séries em destaque</h2>
 
         <div className="posters">
-          {shows.slice(0, 12).map((show) => (
+          {shows.slice(0, this.props.total).map((show) => (
             <div key={show.id} className="poster">
               <img
                 src={`https://image.tmdb.org/t/p/w200${show.poster_path}`}

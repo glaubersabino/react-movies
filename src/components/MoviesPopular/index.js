@@ -26,7 +26,7 @@ export default class MoviesPopular extends Component {
         <h2>Filmes em destaque</h2>
 
         <div className="posters">
-          {movies.slice(0, 12).map((movie) => (
+          {movies.slice(0, this.props.total).map((movie) => (
             <div key={movie.id} className="poster">
               <img
                 src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
