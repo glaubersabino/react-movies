@@ -1,4 +1,5 @@
 import React from "react";
+import Routes from "./routes";
 import "./styles.css";
 
 import Main from "./pages/main";
@@ -6,7 +7,7 @@ import Main from "./pages/main";
 function App() {
   return (
     <div className="App">
-      <Main />
+      <Routes />
     </div>
   );
 }
