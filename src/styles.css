@@ -111,3 +111,36 @@ button {
 .posters .poster:hover {
   transform: scale(1.1);
 }
+
+.copyright {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.copyright h1 {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.copyright .tmdb {
+  display: flex;
+  justify-content: space-between;
+}
+
+.copyright .tmdb img {
+  max-width: 120px;
+  margin-right: 20px;
+}
+
+.copyright .tmdb p {
+  width: 483px;
+}
+
+.copyright .tmdb p a {
+  text-decoration: none;
+  background: -webkit-linear-gradient(#01b4e4, #90cea1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
