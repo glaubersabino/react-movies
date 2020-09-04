@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
 
 import logo from "../../assets/logo.png";
@@ -18,13 +19,13 @@ const Header = () => (
 
       <ul>
         <li>
-          <a href="#">Início</a>
+          <Link to="/">Início</Link>
         </li>
         <li>
-          <a href="#">Filmes</a>
+          <Link to="/movies">Filmes</Link>
         </li>
         <li>
-          <a href="#">Séries</a>
+          <Link to="/shows">Séries</Link>
         </li>
       </ul>
     </div>
