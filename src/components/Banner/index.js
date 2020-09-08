@@ -98,6 +98,18 @@ export default class Banner extends Component {
     return newDate.toLocaleDateString("pt-BR");
   };
 
+  showTitle = (single, multi) => {
+    let title = "";
+
+    if (single) {
+      title = single.title ? single.title : single.name;
+    } else {
+      title = multi.title ? multi.title : multi.name;
+    }
+
+    return title;
+  };
+
   render() {
     const singleBanner = this.props.data;
     const { banners } = this.state;
@@ -119,7 +131,7 @@ export default class Banner extends Component {
       <div className="poster-bg" style={bannerStyle}>
         <Header />
         <div className="poster-featured-info">
-          <h1>{singleBanner ? singleBanner.title : banners.title}</h1>
+          <h1>{this.showTitle(singleBanner, banners)}</h1>
           <p>{singleBanner ? singleBanner.overview : banners.overview}</p>
           <div className="info">
             <div className="date">
