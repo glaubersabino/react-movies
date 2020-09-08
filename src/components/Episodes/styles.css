@@ -1,0 +1,60 @@
+.main_seasons {
+  display: flex;
+  flex-direction: column;
+}
+
+.main_seasons .seasons {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.main_seasons .season {
+  display: flex;
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.main_seasons .card {
+  position: relative;
+}
+
+.main_seasons .season img {
+  max-height: 169px;
+  cursor: pointer;
+  margin-right: 20px;
+  border-radius: 2px;
+}
+
+.main_seasons .season .number {
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.main_seasons .season .overlay {
+  position: absolute;
+  transition: 0.5s ease;
+  opacity: 0;
+  width: 300px;
+  height: 169px;
+  top: 0;
+  left: 0;
+}
+
+.main_seasons .season .overlay p {
+  position: absolute;
+  bottom: 50%;
+  text-align: center;
+  width: 300px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.card:hover img {
+  opacity: 0.3;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}

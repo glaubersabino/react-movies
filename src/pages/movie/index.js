@@ -29,6 +29,7 @@ export default class Movie extends Component {
     const response = await api.get(
       `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.REACT_APP_SECRET_API}`
     );
+
     this.setState({ cast: response.data.cast });
   };
 
