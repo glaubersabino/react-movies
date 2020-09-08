@@ -2,15 +2,18 @@ import React, { Component } from "react";
 import api from "../../services/api";
 
 import Banner from "../../components/Banner";
+import Cast from "../../components/Cast";
 
 export default class Movie extends Component {
   state = {
     movie: [],
     genres: [],
+    cast: [],
   };
 
   componentDidMount() {
     this.loadMovie();
+    this.loadCast();
   }
 
   loadMovie = async () => {
@@ -21,11 +24,20 @@ export default class Movie extends Component {
     this.setState({ movie: response.data, genres: response.data.genres });
   };
 
+  loadCast = async () => {
+    const { id } = this.props.match.params;
+    const response = await api.get(
+      `https://api.themoviedb.org/3/movie/${id}/credits?api_key=${process.env.REACT_APP_SECRET_API}`
+    );
+    this.setState({ cast: response.data.cast });
+  };
+
   render() {
-    const { movie, genres } = this.state;
+    const { movie, genres, cast } = this.state;
     return (
       <div className="main">
         <Banner data={movie} gen={genres} />
+        <Cast cast={cast} />
       </div>
     );
   }

@@ -1,0 +1,39 @@
+.main_cast {
+  display: flex;
+  flex-direction: column;
+  margin-top: 620px;
+  margin-bottom: 50px;
+}
+
+.main_cast h2 {
+  margin-bottom: 20px;
+}
+
+.main_cast .casts {
+  display: flex;
+  overflow-x: auto;
+}
+
+.main_cast .cast {
+  display: flex;
+  align-items: center;
+  min-width: 270px;
+  margin-right: 20px;
+}
+
+.main_cast .cast img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.main_cast .cast h1 {
+  font-size: 1.2em;
+  color: #fff;
+}
+
+.main_cast .cast h2 {
+  font-size: 0.8em;
+  color: #ecf0f1;
+}
