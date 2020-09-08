@@ -139,7 +139,7 @@ export default class Banner extends Component {
                 <FiThumbsUp />
                 {(singleBanner
                   ? singleBanner.vote_average
-                  : banners.singleBanner) * 10}
+                  : banners.vote_average) * 10}
                 %
               </p>
               <p>
