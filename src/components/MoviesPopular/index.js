@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import api from "../../services/api";
 
 export default class MoviesPopular extends Component {
@@ -27,12 +28,14 @@ export default class MoviesPopular extends Component {
 
         <div className="posters">
           {movies.slice(0, this.props.total).map((movie) => (
-            <div key={movie.id} className="poster">
-              <img
-                src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
-                alt={movie.title}
-              />
-            </div>
+            <Link to={`/movie/${movie.id}`}>
+              <div key={movie.id} className="poster">
+                <img
+                  src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+                  alt={movie.title}
+                />
+              </div>
+            </Link>
           ))}
         </div>
       </div>
