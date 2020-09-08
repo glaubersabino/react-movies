@@ -76,7 +76,6 @@ export default class Banner extends Component {
     if (this.props.data) {
       const g = this.props.gen;
       for (let x = 0; x < g.length; x++) {
-        console.log(g[x].name);
         genresString.push(g[x].name);
       }
     } else {
@@ -93,7 +92,15 @@ export default class Banner extends Component {
     return genresString.join(", ");
   };
 
-  showDate = (date) => {
+  showDate = (single, multi) => {
+    let date = "";
+
+    if (single) {
+      date = single.release_date ? single.release_date : single.first_air_date;
+    } else {
+      date = multi.release_date ? multi.release_date : multi.first_air_date;
+    }
+
     const newDate = new Date(date);
     return newDate.toLocaleDateString("pt-BR");
   };
@@ -113,19 +120,12 @@ export default class Banner extends Component {
   render() {
     const singleBanner = this.props.data;
     const { banners } = this.state;
-    const date = singleBanner
-      ? singleBanner.release_date
-      : banners.release_date;
 
     const bannerStyle = {
       background: `linear-gradient(0deg, rgba(45, 52, 54, 1) 0%, rgba(45, 52, 54, 0.8911939775910365) 10%, rgba(45, 52, 54, 0) 25%, rgba(45, 52, 54, 0) 74%, rgba(45, 52, 54, 0.8547794117647058) 100%), url("https://image.tmdb.org/t/p/original${
         singleBanner ? singleBanner.backdrop_path : banners.backdrop_path
       }")`,
     };
-
-    if (this.props.data) {
-      console.log(this.props.data.title);
-    }
 
     return (
       <div className="poster-bg" style={bannerStyle}>
@@ -143,7 +143,7 @@ export default class Banner extends Component {
                 %
               </p>
               <p>
-                <FiCalendar /> {this.showDate(date)}
+                <FiCalendar /> {this.showDate(singleBanner, banners)}
               </p>
             </div>
             <div className="categories">
