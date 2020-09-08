@@ -5,6 +5,7 @@ import Main from "./pages/main";
 import Movies from "./pages/movies";
 import Movie from "./pages/movie";
 import Shows from "./pages/shows";
+import Show from "./pages/show";
 
 const Routes = () => (
   <BrowserRouter>
@@ -13,6 +14,7 @@ const Routes = () => (
       <Route path="/movies" component={Movies}></Route>
       <Route path="/movie/:id" component={Movie}></Route>
       <Route path="/shows" component={Shows}></Route>
+      <Route path="/show/:id" component={Show}></Route>
     </Switch>
   </BrowserRouter>
 );
