@@ -3,6 +3,7 @@ import api from "../../services/api";
 
 import Banner from "../../components/Banner";
 import Cast from "../../components/Cast";
+import MoviesSimilar from "../../components/MoviesSimilar";
 
 export default class Movie extends Component {
   state = {
@@ -35,10 +36,13 @@ export default class Movie extends Component {
 
   render() {
     const { movie, genres, cast } = this.state;
+    const { id } = this.props.match.params;
+
     return (
       <div className="main">
         <Banner data={movie} gen={genres} />
         <Cast cast={cast} />
+        <MoviesSimilar id={id} />
       </div>
     );
   }

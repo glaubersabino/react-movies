@@ -77,6 +77,10 @@ button {
   color: #fff;
 }
 
+.no-margin {
+  margin-top: 0 !important;
+}
+
 .main-posters {
   display: flex;
   flex-direction: column;
