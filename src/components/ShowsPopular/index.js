@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import api from "../../services/api";
 
 export default class ShowsPopular extends Component {
@@ -26,12 +27,14 @@ export default class ShowsPopular extends Component {
 
         <div className="posters">
           {shows.slice(0, this.props.total).map((show) => (
-            <div key={show.id} className="poster">
-              <img
-                src={`https://image.tmdb.org/t/p/w200${show.poster_path}`}
-                alt={show.name}
-              />
-            </div>
+            <Link to={`/show/${show.id}`}>
+              <div key={show.id} className="poster">
+                <img
+                  src={`https://image.tmdb.org/t/p/w200${show.poster_path}`}
+                  alt={show.name}
+                />
+              </div>
+            </Link>
           ))}
         </div>
       </div>
