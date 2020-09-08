@@ -80,8 +80,10 @@ form:hover input {
 }
 
 .poster-featured-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin-left: 5%;
-  margin-top: 15vh;
   max-width: 480px;
 }
 
