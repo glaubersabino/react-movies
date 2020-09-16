@@ -124,7 +124,7 @@ export default class Banner extends Component {
     const bannerStyle = {
       background: `linear-gradient(0deg, rgba(45, 52, 54, 1) 0%, rgba(45, 52, 54, 0.8911939775910365) 10%, rgba(45, 52, 54, 0) 25%, rgba(45, 52, 54, 0) 74%, rgba(45, 52, 54, 0.8547794117647058) 100%), url("https://image.tmdb.org/t/p/original${
         singleBanner ? singleBanner.backdrop_path : banners.backdrop_path
-      }")`,
+        }")`,
     };
 
     return (
@@ -132,7 +132,7 @@ export default class Banner extends Component {
         <Header />
         <div className="poster-featured-info">
           <h1>{this.showTitle(singleBanner, banners)}</h1>
-          <p>{singleBanner ? singleBanner.overview : banners.overview}</p>
+          <p className="overview">{singleBanner ? singleBanner.overview : banners.overview}</p>
           <div className="info">
             <div className="date">
               <p>

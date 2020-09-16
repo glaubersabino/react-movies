@@ -144,3 +144,21 @@ form:hover input {
   height: 20px;
   margin-right: 5px;
 }
+
+@media (max-width: 480px) {
+  .main-header img {
+    max-width: 150px;
+  }
+
+  .main-header .mobile{
+    display: none;
+  }
+
+  .main-header .mobile_menu{
+    display: block;
+  }
+
+  .poster-featured-info{
+    margin-top: 65%;
+  }
+}

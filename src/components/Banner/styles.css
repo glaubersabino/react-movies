@@ -6,3 +6,13 @@
   left: 0;
   background-size: cover !important;
 }
+
+@media (max-width: 480px) {
+  .poster-bg{
+    background-position: center !important;
+  }
+  
+  .poster-featured-info .overview{
+    display: none;
+  }
+}

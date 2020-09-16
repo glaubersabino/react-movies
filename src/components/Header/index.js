@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FiSearch } from "react-icons/fi";
+import { FiSearch, FiMenu } from "react-icons/fi";
 
 import logo from "../../assets/logo.png";
 import "./styles.css";
@@ -17,7 +17,8 @@ const Header = () => (
         <input type="text" placeholder="Pesquisar" />
       </form>
 
-      <ul>
+      <ul className="mobile">
+        <FiMenu className="mobile_menu" />
         <li>
           <Link to="/">Início</Link>
         </li>
