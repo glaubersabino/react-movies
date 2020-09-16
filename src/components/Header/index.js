@@ -16,19 +16,26 @@ const Header = () => (
         </IconContext.Provider>
         <input type="text" placeholder="Pesquisar" />
       </form>
+      <div className="mobile_menu">
+        <input type="checkbox" id="mobile_button" />
+        <label for="mobile_button">
+          <IconContext.Provider value={{ size: "24px" }}>
+            <FiMenu className="mobile_menu" />
+          </IconContext.Provider>
+        </label>
 
-      <ul className="mobile">
-        <FiMenu className="mobile_menu" />
-        <li>
-          <Link to="/">Início</Link>
-        </li>
-        <li>
-          <Link to="/movies">Filmes</Link>
-        </li>
-        <li>
-          <Link to="/shows">Séries</Link>
-        </li>
-      </ul>
+        <ul className="mobile">
+          <li>
+            <Link to="/">Início</Link>
+          </li>
+          <li>
+            <Link to="/movies">Filmes</Link>
+          </li>
+          <li>
+            <Link to="/shows">Séries</Link>
+          </li>
+        </ul>
+      </div>
     </div>
   </header>
 );

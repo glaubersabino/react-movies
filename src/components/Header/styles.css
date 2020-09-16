@@ -79,6 +79,11 @@ form:hover input {
   color: #c0392b;
 }
 
+.main-header .mobile_menu input,
+.main-header .mobile_menu label{
+  display: none;
+}
+
 .poster-featured-info {
   display: flex;
   flex-direction: column;
@@ -151,11 +156,46 @@ form:hover input {
   }
 
   .main-header .mobile{
-    display: none;
+    position: fixed;
+    right: -100%;
   }
 
   .main-header .mobile_menu{
+    margin-left: 10px;
+  }
+
+  .main-header .mobile_menu input{
     display: block;
+    width: 24px;
+    height: 24px;
+    display: block;
+    background: transparent;
+    visibility: hidden;
+  }
+
+  .main-header .mobile_menu label{
+    display: block;
+  }
+
+  .main-header .mobile_menu #mobile_button:checked ~ .mobile{
+    width: 100%;
+    position: fixed;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    margin-top: 10px;
+    padding: 40px;
+  }
+
+  .mobile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all ease-in-out 0.2s;
+  }
+
+  .mobile li{
+    margin-bottom: 20px;
   }
 
   .poster-featured-info{

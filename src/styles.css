@@ -108,7 +108,7 @@ button {
 }
 
 .posters .poster {
-  transition: all ease 0.3;
+  transition: all ease 0.3s;
   cursor: pointer;
 }
 
@@ -147,4 +147,41 @@ button {
   background: -webkit-linear-gradient(#01b4e4, #90cea1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 480px) {
+  .main-posters {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .posters{
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 15px;
+  }
+
+  .posters .poster img{
+    max-width: 160px;
+  }
+
+  .copyright {
+    display: flex;
+    flex-direction: column;
+    
+    margin-bottom: 30px;
+  }
+
+  .copyright .tmdb{
+    justify-content: center;
+    align-items: center;
+    max-width: 337px;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .copyright .tmdb p {
+    width: 100%; 
+    text-align: center;
+    margin-top: 10px;
+  }
+  
 }
